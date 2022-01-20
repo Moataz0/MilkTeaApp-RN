@@ -1,10 +1,10 @@
 import React from 'react';
 import {Text, View} from 'react-native';
 
-const Reward = ({params}) => (
+const Rewards = ({params}) => (
   <View>
-    <Text>Reward</Text>
+    <Text>Rewards</Text>
   </View>
 );
 
-export default Reward;
+export default Rewards;

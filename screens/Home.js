@@ -1,14 +1,36 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {HeaderBar} from '../components';
+import {COLORS, SIZES, constants, images, icons, dummyData} from '../constants';
+import {connect} from 'react-redux';
 
-const Home = () => {
+const Home = ({navigation, appTheme}) => {
   return (
-    <View>
-      <Text>Home</Text>
+    <View style={styles.container}>
+      <HeaderBar />
+      <ScrollView
+        style={{
+          flex: 1,
+          marginTop: -25,
+          borderTopLeftRadius: SIZES.radius * 2,
+          borderTopRightRadius: SIZES.radius * 2,
+          backgroundColor: appTheme.backgroundColor,
+        }}></ScrollView>
     </View>
   );
 };
 
-export default Home;
+function mapStateToProps(state) {
+  return {
+    appTheme: state.appTheme,
+    error: state.error,
+  };
+}
 
-const styles = StyleSheet.create({});
+export default connect(mapStateToProps, null)(Home);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
