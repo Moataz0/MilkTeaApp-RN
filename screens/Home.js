@@ -4,7 +4,6 @@ import { CustomButton, HeaderBar } from '../components';
 import { COLORS, SIZES, constants, images, icons, dummyData, FONTS } from '../constants';
 import { connect } from 'react-redux';
 
-
 const promoTabs = constants.promoTabs.map((promoTab) => ({
   ...promoTab,
   ref: React.createRef()
@@ -35,8 +34,6 @@ const TabIndicator = ({ measureLayout, scrollX }) => {
           translateX
         }]
       }} />
-
-
   )
 }
 const Tabs = ({ appTheme, scrollX, onPromoTabPress }) => {
@@ -62,7 +59,6 @@ const Tabs = ({ appTheme, scrollX, onPromoTabPress }) => {
       )
     })
   }, [containerRef.current])
-
 
   return (
     <View
